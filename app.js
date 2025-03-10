@@ -47,7 +47,7 @@ mongoose.connect(DB_URL, {
 
 app.use(logger('dev'));
 app.use(cors({
-    origin: "https://bus-app-frontend-azure.vercel.app/", // Replace with your frontend URL
+    origin: "https://bus-app-frontend-azure.vercel.app", // Replace with your frontend URL
     methods: "GET,POST,PUT,DELETE",
     credentials: true
 }));
