@@ -7,7 +7,11 @@ var passport = require('passport');
 const cors = require('cors')
 const bus=require('./models/Buses')
 
-
+app.use(cors({
+    origin: "https://bus-app-frontend-azure.vercel.app/", // Replace with your frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+}));
 var app = express();
 
 
