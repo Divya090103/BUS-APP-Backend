@@ -46,16 +46,17 @@ mongoose.connect(DB_URL, {
 
 
 app.use(logger('dev'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cors({
     origin: "https://bus-app-frontend-azure.vercel.app", // Replace with your frontend URL
     methods: "GET,POST,PUT,DELETE",
     credentials: true
 }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors())
 app.use('/', login);
 app.use('/booking', bookingRoute);
 app.use('/register', registerRouter);  // To register page 
