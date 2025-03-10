@@ -12,7 +12,7 @@ var bus = require('../models/Buses');
 
 router.post("/", async (req, res) => {
     try {
-        const { startCity, destination } = req.body; // Use query params instead of req.body
+        const { startCity, destination } = req.query; // Use query params instead of req.body
         console.log(req.query)
 
         if (!startCity || !destination) {
